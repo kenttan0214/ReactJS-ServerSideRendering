@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint *.js app --ext .js,.jsx"
+  },
   "dependencies": {
     "react": "^15.4.2"
   },
