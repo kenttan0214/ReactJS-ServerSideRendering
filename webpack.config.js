@@ -1,7 +1,8 @@
-var path = require('path');
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = function () {
-
+    process.traceDeprecation = true;
     var webpackConfig = {
         context: path.resolve('app'),
         entry: {
@@ -17,9 +18,9 @@ module.exports = function () {
             rules: [{
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader',
-                query: {
-                    presets:[ 'es2015', 'react', 'stage-2']
+                use: {
+                    loader: 'babel-loader',
+                    options: { presets:[ 'es2015', 'react', 'stage-2'] }
                 }
             }]
         },
