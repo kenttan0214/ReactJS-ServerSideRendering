@@ -9,5 +9,5 @@ const port = 9191;
 app.use('/build/', serveStatic(process.cwd() + '/build/'));
 
 app.listen(port,  () => {
-    console.log('server is up on port ', port);
+    console.log('server is up on port ', port); // eslint-disable-line no-console
 });
