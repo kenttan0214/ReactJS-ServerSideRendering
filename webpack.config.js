@@ -22,7 +22,7 @@ module.exports = function () {
         },
         plugins: [],
         resolve: {
-            modules: ['node_modules', 'src/common/components', 'src/common/**/components'],
+            modules: ['node_modules', 'src/common/components'],
             extensions: ['.js', '.jsx'],
             alias: {
             }
