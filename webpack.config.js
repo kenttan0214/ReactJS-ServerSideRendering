@@ -2,14 +2,12 @@ var path = require('path');
 
 module.exports = function () {
     var webpackConfig = {
-        context: path.resolve('app'),
         entry: {
-            app: './app'
+            app: './src/client/app.jsx'
         },
         output: {
             path: path.resolve('build'),
-            filename: '[hash][id].js',
-            chunkFilename: '[name][chunkhash][id].js'
+            filename: 'bundle.js'
         },
         devtool: '#eval',
         module: {
@@ -24,8 +22,8 @@ module.exports = function () {
         },
         plugins: [],
         resolve: {
-            modules: ['node_modules'],
-            extensions: ['.js', 'jsx'],
+            modules: ['node_modules', 'src/common/components', 'src/common/**/components'],
+            extensions: ['.js', '.jsx'],
             alias: {
             }
         },
