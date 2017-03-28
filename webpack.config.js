@@ -3,7 +3,7 @@ var path = require('path');
 module.exports = function () {
     var webpackConfig = {
         entry: {
-            app: './src/client/app.jsx'
+            app: './src/client/app.tsx'
         },
         output: {
             path: path.resolve('build'),
@@ -12,18 +12,18 @@ module.exports = function () {
         devtool: '#eval',
         module: {
             rules: [{
-                test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader',
-                options: {
-                    presets:[ 'es2015', 'react', 'stage-2']
-                }
+                test: /\.tsx?$/,
+                loader: 'awesome-typescript-loader'
+            }, {
+                enforce: 'pre',
+                test: /\.js$/,
+                loader: 'source-map-loader'
             }]
         },
         plugins: [],
         resolve: {
-            modules: ['node_modules', 'src/common/components'],
-            extensions: ['.js', '.jsx'],
+            modules: ['node_modules', 'src/common/components/*/**'],
+            extensions: ['.ts','.tsx','.js', '.jsx'],
             alias: {
             }
         },
