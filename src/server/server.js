@@ -1,6 +1,7 @@
 import connect from 'connect';
 import process from 'process';
 import serveStatic from 'serve-static';
+import {ejsRender} from './ejs-renderer';
 
 const app = connect();
 const port = 9191;
@@ -8,19 +9,7 @@ const port = 9191;
 (require('./webpack').default)(app);
 
 app.use((req, res) => {
-    const HTML = `
-                  <!DOCTYPE html>
-                  <html>
-                    <head>
-                      <meta charset="utf-8">
-                      <title>Isomorphic Redux Demo</title>
-                    </head>
-                    <body>
-                      <div data-role="app"></div>
-                      <script type="application/javascript" src="/bundle.js"></script>
-                    </body>
-                  </html>
-                  `;
+    const HTML = ejsRender('full-page');
     res.end(HTML);
 });
 
