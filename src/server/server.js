@@ -10,6 +10,10 @@ const port = 9191;
 
 app.use((req, res) => {
     const HTML = ejsRender('full-page');
+    res.statusCode = 200;
+    res.writeHead(200, {
+        'Content-Type': 'text/html'
+    });
     res.end(HTML);
 });
 
