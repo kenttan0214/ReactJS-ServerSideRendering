@@ -9,7 +9,7 @@ const getTemplateString = (name) => {
     return fs.readFileSync(templatePath).toString();
 };
 
-export const ejsRender = (name , params = {}) => {
+const ejsRender = (name , params = {}) => {
     let template = getTemplateString (name);
     return ejs.render(template , params);
 };

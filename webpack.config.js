@@ -7,7 +7,7 @@ module.exports = function () {
         },
         output: {
             path: path.resolve('build'),
-            filename: 'bundle.js'
+            filename: 'client.js'
         },
         devtool: '#eval',
         module: {

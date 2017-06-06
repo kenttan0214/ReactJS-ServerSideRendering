@@ -5,8 +5,10 @@
   "license": "MIT",
   "scripts": {
     "lint": "./node_modules/.bin/eslint *.js app --ext .js,.jsx",
-    "build": "./node_modules/.bin/webpack",
-    "start": "./node_modules/.bin/babel-node ./src/server/server.js"
+    "build:fe": "./node_modules/.bin/webpack",
+    "build:be": "./node_modules/.bin/webpack --config webpack.config.server.js",
+    "start": "node ./build/server.js",
+    "devx": "./node_modules/.bin/babel-node ./src/server/server.js"
   },
   "dependencies": {
     "ejs": "^2.5.6",
