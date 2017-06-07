@@ -1,3 +1,4 @@
+import React from 'react';
 import ejs from 'ejs';
 import fs from 'fs';
 import { renderToString } from 'react-dom/server';
