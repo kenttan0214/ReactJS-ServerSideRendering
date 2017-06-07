@@ -1,7 +1,7 @@
 import connect from 'connect';
 import process from 'process';
 import serveStatic from 'serve-static';
-import {ejsRender} from './ejs-renderer';
+import handleRender from './ejs-renderer';
 
 const app = connect();
 const port = 9191;
@@ -9,12 +9,7 @@ const port = 9191;
 (require('./webpack').default)(app);
 
 app.use((req, res) => {
-    const HTML = ejsRender('full-page');
-    res.statusCode = 200;
-    res.writeHead(200, {
-        'Content-Type': 'text/html'
-    });
-    res.end(HTML);
+    handleRender(port, req, res);
 });
 
 app.use('/build/', serveStatic(process.cwd() + '/build/'));

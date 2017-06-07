@@ -3,11 +3,11 @@ var path = require('path');
 module.exports = function () {
     var webpackConfig = {
         entry: {
-            app: './src/client/app.jsx'
+            app: './src/client/app.js'
         },
         output: {
             path: path.resolve('build'),
-            filename: 'bundle.js'
+            filename: 'client.js'
         },
         devtool: '#eval',
         module: {
@@ -22,7 +22,7 @@ module.exports = function () {
         },
         plugins: [],
         resolve: {
-            modules: ['node_modules', 'src/common/components'],
+            modules: ['node_modules', 'src/pages', 'src/common/components'],
             extensions: ['.js', '.jsx'],
             alias: {
             }
