@@ -10,7 +10,7 @@ const routes = () => {
 			<Route component={demoMain} path={'/'}>
 					<IndexRoute component={demoOne} />
 					<Route component={demoOne} path='/demoOne' />
-					<Route component={demoTwo} path='/demoOne' />
+					<Route component={demoTwo} path='/demoTwo' />
 			</Route>
 		);
     return Routes;
